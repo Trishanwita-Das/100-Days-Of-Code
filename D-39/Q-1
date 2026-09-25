@@ -1,0 +1,27 @@
+//Q77. Check if the elements on the diagonal of a matrix are distinct
+#include <stdio.h>
+int main() {
+    int n, i, j, matrix[10][10], distinct = 1;
+    printf("Enter size of square matrix (n x n): ");
+    scanf("%d", &n);
+
+    printf("Enter matrix elements:\n");
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            scanf("%d", &matrix[i][j]);
+
+    for (i = 0; i < n && distinct; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (matrix[i][i] == matrix[j][j]) {
+                distinct = 0;
+                break;
+            }
+        }
+    }
+
+    if (distinct)
+        printf("Diagonal elements are Distinct\n");
+    else
+        printf("Diagonal elements are Not Distinct\n");
+    return 0;
+}
