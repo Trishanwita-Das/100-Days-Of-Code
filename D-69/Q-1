@@ -1,0 +1,21 @@
+//Q137. Create an enum for user roles (ADMIN, USER, GUEST) and display messages based on role.
+
+#include <stdio.h>
+int main()
+{
+    enum Role {ADMIN, USER, GUEST};
+    enum Role role;
+    int choice;
+    printf("Enter 0 for ADMIN, 1 for USER, 2 for GUEST: ");
+    scanf("%d", &choice);
+    role = choice;
+    if(role == ADMIN)
+        printf("Welcome Admin\n");
+    else if(role == USER)
+        printf("Welcome User\n");
+    else if(role == GUEST)
+        printf("Welcome Guest\n");
+    else
+        printf("Invalid role\n");
+    return 0;
+}
